@@ -6,6 +6,8 @@ import com.myblog20.myblog20.Payload.PostDto;
 import com.myblog20.myblog20.Repository.PostRepository;
 import com.myblog20.myblog20.Service.PostService;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -37,7 +39,7 @@ public class PostServiceimpl implements PostService {
 
 
         PostDto dto = mapToDto(save);
-        return null;
+        return dto;
     }
 
     @Override
