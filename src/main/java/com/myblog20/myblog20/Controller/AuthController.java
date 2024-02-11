@@ -36,7 +36,7 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
     @PostMapping("/signup")
     public ResponseEntity<?>registerUser(@RequestBody LoginDto loginDto){
-        new UsernamePasswordAuthenticationToken(loginDto.getUsernameOrEmail(), loginDto.getPassword())
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken= new UsernamePasswordAuthenticationToken(loginDto.getUsernameOrEmail(), loginDto.getPassword());
         Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         return new ResponseEntity<>("User signed-in successully!",HttpStatus.OK);
