@@ -1,6 +1,6 @@
 package com.myblog20.myblog20.Entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
